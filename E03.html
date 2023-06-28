@@ -7,11 +7,24 @@
     //Calcule se o usuário possui dinheiro suficiente para realizar a viagem para o destino que pretende. Se o usuário puder viajar, o programa apresentará a mensagem "Boa viagem" e quantos dias poderá ficar no destino, além de qual será o custo da viagem. Caso não possa viajar o programa apresentará a mensagem "Sem Férias" e também apresentará "quantos dinheiros" (R$) estão faltando para realizar a viagem.
 
     //ENTRADA
-
+    const estado = prompt('Qual estado deseja visitar? MG ou RS' ).toLowerCase();
+    const dinheiro = prompt('Quanto de dinheiro voce tem?');
 
     //PROCESSAMENTO
-
-
-    //SAÍDA
+    if (estado === 'rs' && dinheiro >= 180) {
+        alert ('Boas férias :)');
+    }
+    else if (estado === 'rs' && dinheiro < 180) {
+        alert ('Sem férias :(, falta isso:' + 180 - dinheiro);
+    }
+    else if (estado === 'mg' && dinheiro >= 210) {
+        alert ('Boas férias :)');
+    }
+    else if (estado === 'mg' && dinheiro < 210) {
+        alert ('Sem férias :(, falta isso:' + 210 - dinheiro);
+    }
+    else {
+        alert ('invalido');
+    }
 
 </script>

@@ -1,17 +1,35 @@
-<script>
-    //PROBLEMA: Vínculo empregatício
-    //Peça para o usuário informar qual a sua remuneração mensal (salário). Peça também para o usuário informar qual cargo que ocupa e quantas horas trabalha por dia. Considere 20 dias de trabalho no mês.
-    //Se o usuário for "Estagiário", e trabalhar até 6 horas diárias (inclusive), o programa deverá informar quanto recebe por hora.
-    //Se o usuário for "Estagiário", e trabalhar mais que 6 horas diárias, o programa deverá apresentar a mensagem "Precisa ser contratado", além de calcular um adicional de 50% (50/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
-    //Se o usuário for "Programador" e trabalhar até 8 horas diárias (inclusive), o programa deverá informar quanto recebe por hora.
-    //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
+<script> 
+//ENTRADA
+const salario = prompt('Insira seu salário');
+const cargo = prompt('Qual é o seu cargo?').toLowerCase();
+const horas = prompt('Quantas horas de trabalho por dia?');
 
-    //ENTRADA
+//PROCESSAMENTO
+const diasTrabalho = 20;
+let valorHora = 0;
+let adicional = 0;
 
+if (cargo === 'estagiario') {
+  if (horas <= 6) {
+    valorHora = salario / (diasTrabalho * horas);
+  } else {
+    adicional = salario * 0.5;
+    valorHora = (salario + adicional) / (diasTrabalho * horas);
+    alert('Você precisa ser contratado! Seu novo salário sera: ' + (salario + adicional));
+  }
+} else if (cargo === 'programador') {
+  if (horas <= 8) {
+    valorHora = salario / (diasTrabalho * horas);
+  } else {
+    adicional = salario * 0.3;
+    valorHora = (salario + adicional) / (diasTrabalho * horas);
+    alert('Você recebeu um adicional de 30%! Seu novo salário e: ' + (salario + adicional));
+  }
+}
 
-    //PROCESSAMENTO
+alert('Você recebe por hora: ' + valorHora.toFixed(2));
 
+//SAÍDA
 
-    //SAÍDA
 
 </script>
