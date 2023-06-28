@@ -1,4 +1,4 @@
-# Orientações - Simulado IF...Else [22/06/2023]
+# Orientações - Simulado IF...Else [22/06/2023 e 28/06/2023]
 
 # Comandos Git a serem executados
 
